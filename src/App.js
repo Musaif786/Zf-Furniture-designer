@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Photos from "./components/Photos";
+import Animation from "./components/Animation";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import "./index.css";
+import "./utilits.css";
+
+import {
+Routes,
+  Route,
+} from "react-router-dom";
+import Home from "./components/Home";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+
+const App = ()=> {
+    return(
+        <> 
+        <Header/>
+        <Routes>        
+        <Route path="/home" element={<Home/>}></Route>
+       <Route path="/about" element={<About/>} ></Route>
+       <Route path="/photos" element={<Photos/>} ></Route>
+       <Route path="/contact" element={<Contact/>} ></Route>
+      
+      
+       </Routes>
+
+       {/* <Animation/> */}
+
+        {/* <Footer/> */}
+        
+        </>
+    );
 }
-
 export default App;
